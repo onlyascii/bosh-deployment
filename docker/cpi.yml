@@ -27,11 +27,11 @@
     - 25250/tcp
     - 8443/tcp
     - 8080/tcp
-- path: /instance_groups/name=bosh/jobs/-
-  type: replace
-  value:
-    name: docker_cpi
-    release: bosh-docker-cpi
+# - path: /instance_groups/name=bosh/jobs/-
+#   type: replace
+#   value:
+#     name: docker_cpi
+#     release: bosh-docker-cpi
 - path: /instance_groups/name=bosh/properties/director/cpi_job?
   type: replace
   value: docker_cpi
