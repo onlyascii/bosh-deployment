@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
-network=$(bosh int ${1} --path /network)
-subnet=$(bosh int ${1} --path /internal_cidr)
+network="bosh-docker"
+subnet="10.245.0.0/16"
 
 if ! docker network ls | grep -q ${network}; then
     echo "Creating docker network: ${network} with range: ${subnet}"

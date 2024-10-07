@@ -1,8 +1,8 @@
 #!/bin/bash
 
-./pre_up.sh
+./pre-up.sh
 
-bosh int ../bosh.yml \
+bosh create-env ../bosh.yml \
   -o ../docker/cpi.yml \
   -o ../docker/unix-sock.yml \
   -o ../bosh-lite-docker.yml \
@@ -19,5 +19,5 @@ bosh int ../bosh.yml \
   -v internal_gw=10.245.0.1 \
   -v static_ip=10.245.0.10 \
   -v internal_ip=localhost \
-  -v network=bosh-docker
-  # --state ./state.json \
+  -v network=bosh-docker \
+  --state ./state.json
